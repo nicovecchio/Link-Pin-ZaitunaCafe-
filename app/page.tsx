@@ -7,11 +7,11 @@ export default function Page() {
   const { avatarUrl, name, bio, socialLinks, links } = profileData
 
   return (
-    <main className="relative flex min-h-dvh w-full items-center justify-center p-4 overflow-hidden">
-      {/* Fondo con gradiente sutil */}
+    <main className="relative flex min-h-dvh w-full items-center justify-center overflow-hidden bg-slate-950 p-4">
+      {/* Fondo con gradiente verde oliva y resplandor de Zaituna */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-900 via-black to-black"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,#2d3a24_0%,#0f172a_60%,#020617_100%)]"
       />
 
       <section className="relative z-10 flex w-full max-w-md flex-col items-center gap-6">
@@ -20,7 +20,7 @@ export default function Page() {
           <div className="relative">
             <div
               aria-hidden="true"
-              className="absolute -inset-1 rounded-full bg-gradient-to-tr from-emerald-500 to-amber-500 opacity-75 blur-sm"
+              className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#4a5d3f] to-[#8a9a5b] opacity-85 blur-md"
             />
             <Image
               src={avatarUrl || "/placeholder.svg"}
@@ -28,15 +28,15 @@ export default function Page() {
               width={112}
               height={112}
               priority
-              className="relative size-28 rounded-full border-2 border-white/20 object-cover"
+              className="relative size-28 rounded-full border-2 border-white/20 object-cover -rotate-12"
             />
           </div>
 
           <div className="space-y-2">
-            <h1 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl text-white">
+            <h1 className="text-balance text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {name}
             </h1>
-            <p className="mx-auto max-w-xs text-pretty text-sm leading-relaxed text-white/80">
+            <p className="mx-auto max-w-xs text-pretty text-sm leading-relaxed text-emerald-100/80">
               {bio}
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function Page() {
           ))}
         </div>
 
-        <footer className="pt-2 text-center text-xs text-white/30">
+        <footer className="pt-2 text-center text-xs text-emerald-200/40">
           {`© ${new Date().getFullYear()} ${name}`}
         </footer>
       </section>
